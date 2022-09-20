@@ -1,0 +1,18 @@
+ .avatar {
+    width: 300px;
+    height: auto;
+ }
+
+ .avatar.distorted {
+    width: 200px;
+    height: 400px;
+ }
+
+
+/* This is a comment in CSS */
+
+/* For the avatar class I did not add the .proportioned class since I realized that
+their were only two test examples. This means that the .avatar.distorted would take effect
+only on the image with distorted in it's name, while the .avatar would affect the rest which
+in this case would be the only other test image which is the avatar proportioned one.
+*/
