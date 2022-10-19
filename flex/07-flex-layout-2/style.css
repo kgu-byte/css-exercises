@@ -2,27 +2,102 @@ body {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   margin: 0;
   min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
 .header {
   height: 72px;
   background: darkmagenta;
   color: white;
+  font-size: 32px;
+  font-weight: 900px;
+  /* padding-left: 16px; <-- basically the same as the padding they used
+  except their's covers both the left and righ side */
+  display: flex;
+  align-items: center;
+  padding: 0 16px;
 }
 
 .footer {
   height: 72px;
   background: #eee;
   color: darkmagenta;
+  /* margin-top: auto; <-- Originally included this in my solution
+  because I thought I needed it to keep my footer at the bottom of the web page*/
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .sidebar {
   width: 300px;
   background: royalblue;
+  flex-shrink: 0;
+  padding: 16px;
 }
 
 .card {
   border: 1px solid #eee;
   box-shadow: 2px 4px 16px rgba(0,0,0,.06);
   border-radius: 4px;
+  /* font-size: small; */
+  padding: 16px;
+  /* height: 300px; */
+  width: 300px;
+  margin: 16px; /* I did not add this until I saw the solution */
 }
+
+ul {
+  list-style: none; /* This link has the answer: https: //stackoverflow.com/questions/19889069/whats-the-difference-between-list-style-type-and-list-style#:~:text=List%2Dstyle%20is%20simply%20the,or%20disc%2C%20decimal%2C%20etc.
+  but in simple terms list-style is the shorthand to set list-style-type,
+  list-style-position and list-style-image properties all in one declaration. */
+  padding: 0;
+  margin: 0;
+}
+
+a {
+  color: #eee;
+  text-decoration: none;
+  /* display: flex; <-- Not needed */
+  font-size: 24px;
+}
+
+.container {
+  display: flex;
+  /* flex-direction: row; <-- Not really needed since default direction is row */
+  /* flex-grow: 1; <-- the difference between flex: 1 and flex-grow: 1 is that 
+  the former (aka flex: 1) sets flex-basis: 0, and the latter keeps the default flex-basis: auto*/
+  flex: 1;
+}
+
+.cards {
+  padding: 32px;
+  display: flex;
+  /* gap: 20px; */
+  flex-wrap: wrap;
+}
+
+li {
+  margin-bottom: 16px;
+  /* I did not include this class selector when I orginally solved it */ 
+}
+/* Whatever I have commented out is what I orgrinally did 
+that was different from the solutiom */
+
+
+/* For the most part my own solution was around 90% accurate
+compared to the solution provided. There definitely were a few things
+that I included that pretty much did the samething just slightly different:
+For example: the flex-grow in container and gap in cards. 
+
+I  also definitely did not need to included a few things such as 
+display: flex in the (a) selector and the flex-direction in container. 
+
+The things that I did struggle on was getting the sidebar and cards to extended the
+full length of the container/computer screen AND 
+also getting the cards to align next to one another followed by their size.
+
+Overall it took me about 2.5 hrs to figure out my own solution which is not to bad
+considering I did not reference the solution till I was done unlike the 
+the previous problems. */ 
